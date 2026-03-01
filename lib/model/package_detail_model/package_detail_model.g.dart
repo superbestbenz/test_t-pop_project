@@ -12,6 +12,7 @@ PackageDetailModel _$PackageDetailModelFromJson(Map<String, dynamic> json) =>
       name: json['name'] as String?,
       price: (json['price'] as num?)?.toInt(),
       description: json['description'] as String?,
+      imageUrl: json['imageUrl'] as String?,
     );
 
 Map<String, dynamic> _$PackageDetailModelToJson(PackageDetailModel instance) =>
@@ -20,4 +21,5 @@ Map<String, dynamic> _$PackageDetailModelToJson(PackageDetailModel instance) =>
       'name': instance.name,
       'price': instance.price,
       'description': instance.description,
+      'imageUrl': instance.imageUrl,
     };

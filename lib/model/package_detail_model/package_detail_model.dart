@@ -8,13 +8,15 @@ class PackageDetailModel {
   final String? name;
   final int? price;
   final String? description;
+  final String? imageUrl;
 
-  const PackageDetailModel({this.id, this.name, this.price, this.description});
-
-  @override
-  String toString() {
-    return 'PackageDetailModel(id: $id, name: $name, price: $price, description: $description)';
-  }
+  const PackageDetailModel({
+    this.id,
+    this.name,
+    this.price,
+    this.description,
+    this.imageUrl,
+  });
 
   factory PackageDetailModel.fromJson(Map<String, dynamic> json) {
     return _$PackageDetailModelFromJson(json);
@@ -27,12 +29,14 @@ class PackageDetailModel {
     String? name,
     int? price,
     String? description,
+    String? imageUrl,
   }) {
     return PackageDetailModel(
       id: id ?? this.id,
       name: name ?? this.name,
       price: price ?? this.price,
       description: description ?? this.description,
+      imageUrl: imageUrl ?? this.imageUrl,
     );
   }
 }
