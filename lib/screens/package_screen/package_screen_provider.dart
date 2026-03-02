@@ -4,7 +4,6 @@ import 'package:t_pop_testing/core/widget/w_skeleton_loading.dart'
 import 'package:t_pop_testing/data/repository/package_repository.dart';
 import 'package:t_pop_testing/model/package_detail_model/package_detail_model.dart'
     show PackageDetailModel;
-import 'package:t_pop_testing/model/purchased_item/purchased_item.dart' show PurchasedItem;
 
 class PackageScreenProvider extends ChangeNotifier {
   PackageScreenProvider(this._packageRepository);
@@ -26,18 +25,6 @@ class PackageScreenProvider extends ChangeNotifier {
 
   Future<void> getPackageDetail() async {
     _packageDetail = await _packageRepository.getAllPackageDetail();
-  }
-
-  // ----- purchase history support ----------------------------------------
-
-  List<PurchasedItem>? _purchaseHistory;
-
-  List<PurchasedItem>? get purchaseHistory => _purchaseHistory;
-
-  /// Loads the current history from the repository and notifies listeners.
-  Future<void> loadHistory() async {
-    _purchaseHistory = await _packageRepository.getHistory();
-    notifyListeners();
   }
 
   void confirmpackage(BuildContext context, PackageDetailModel? packageDetail) {

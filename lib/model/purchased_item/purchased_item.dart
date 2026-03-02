@@ -6,8 +6,8 @@ part 'purchased_item.g.dart';
 @JsonSerializable()
 class PurchasedItem {
   String? id;
-  String? startDate;
-  String? endDate;
+  DateTime? startDate;
+  DateTime? endDate;
   PaymentMethod? payment;
   String? itemId;
 
@@ -27,8 +27,8 @@ class PurchasedItem {
 
   PurchasedItem copyWith({
     String? id,
-    String? startDate,
-    String? endDate,
+    DateTime? startDate,
+    DateTime? endDate,
     PaymentMethod? payment,
     String? itemId,
   }) {

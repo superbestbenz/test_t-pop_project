@@ -31,7 +31,7 @@ class _PackageScreenState extends State<PackageScreen> {
           IconButton(
             icon: const Icon(Icons.history),
             onPressed: () {
-              // Handle shopping cart action
+              Navigator.pushNamed(context, '/package-history');
             },
           ),
         ],

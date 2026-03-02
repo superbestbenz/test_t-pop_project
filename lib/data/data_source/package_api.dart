@@ -25,8 +25,8 @@ class PackageApi {
     _appState.addItem(
       PurchasedItem(
         id: DateTime.now().millisecondsSinceEpoch.toString(),
-        startDate: DateTime.now().toIso8601String(),
-        endDate: DateTime.now().add(duration).toIso8601String(),
+        startDate: DateTime.now(),
+        endDate: DateTime.now().add(duration),
         payment: paymentMethod,
         itemId: itemId,
       ),

@@ -9,8 +9,12 @@ part of 'purchased_item.dart';
 PurchasedItem _$PurchasedItemFromJson(Map<String, dynamic> json) =>
     PurchasedItem(
       id: json['id'] as String?,
-      startDate: json['startDate'] as String?,
-      endDate: json['endDate'] as String?,
+      startDate: json['startDate'] == null
+          ? null
+          : DateTime.parse(json['startDate'] as String),
+      endDate: json['endDate'] == null
+          ? null
+          : DateTime.parse(json['endDate'] as String),
       payment: $enumDecodeNullable(_$PaymentMethodEnumMap, json['payment']),
       itemId: json['itemId'] as String?,
     );
@@ -18,8 +22,8 @@ PurchasedItem _$PurchasedItemFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$PurchasedItemToJson(PurchasedItem instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'startDate': instance.startDate,
-      'endDate': instance.endDate,
+      'startDate': instance.startDate?.toIso8601String(),
+      'endDate': instance.endDate?.toIso8601String(),
       'payment': _$PaymentMethodEnumMap[instance.payment],
       'itemId': instance.itemId,
     };

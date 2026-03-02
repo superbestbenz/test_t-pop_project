@@ -5,7 +5,7 @@ import 'package:t_pop_testing/model/purchased_item/purchased_item.dart'
     show PurchasedItem;
 
 class AppState extends ChangeNotifier {
-  List<PurchasedItem> _purchasedItems = List.empty(growable: true);
+  final List<PurchasedItem> _purchasedItems = List.empty(growable: true);
   List<PurchasedItem> get purchasedItems => _purchasedItems;
   void addItem(PurchasedItem item) {
     _purchasedItems.add(item);
@@ -25,7 +25,7 @@ class AppState extends ChangeNotifier {
           'Perfect for daily users who want to stay updated. Get unlimited access to all premium features every single day for just 100 baht. This package is ideal if you want to try our service without long-term commitment. Enjoy streaming, downloads, and exclusive content daily.',
       price: 100,
       imageUrl:
-          'https://media.istockphoto.com/id/1131812584/vector/day-calendar-with-date-march-22.jpg?s=612x612&w=0&k=20&c=c7rd0-3BI6CKN_eGQMl24SkHe_u7DLq3IqLr4LYcAKs=',
+          'https://st2.depositphotos.com/4428871/6740/i/450/depositphotos_67404901-stock-photo-daily.jpg',
       duration: Duration(days: 1),
     ),
     PackageDetailModel(
