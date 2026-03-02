@@ -1,0 +1,12 @@
+{
+  "shoppingPackage": "Shopping Package",
+  "buy": "Buy",
+  "paymentMethod": "Payment Method",
+  "creditCard": "Credit Card",
+  "bankTransfer": "Bank Transfer",
+  "mobileWallet": "Mobile Wallet",
+  "methodDetails": "Method Details",
+  "custom": "Custom",
+  "payNow": "Pay Now(#1)",
+  "thb": "THB"
+}
