@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:t_pop_testing/core/widget/w_skeleton_loading.dart'
     show WSkeletonLoading, SkeletonState;
+import 'package:t_pop_testing/l10n/app_localizations.dart' show AppLocalizations;
 import 'package:t_pop_testing/model/package_detail_model/package_detail_model.dart'
     show PackageDetailModel;
 import 'package:t_pop_testing/screens/package_screen/package_screen_provider.dart';
@@ -26,7 +27,7 @@ class _PackageScreenState extends State<PackageScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Shopping package'),
+        title: Text(AppLocalizations.of(context)!.shoppingPackage),
         actions: [
           IconButton(
             icon: const Icon(Icons.history),
@@ -141,7 +142,7 @@ class CardPackage extends StatelessWidget {
                           );
                         },
                         icon: const Icon(Icons.shopping_cart),
-                        label: const Text('Buy'),
+                        label: Text(AppLocalizations.of(context)!.buy),
                         style: ButtonStyle(
                           padding: WidgetStateProperty.all(
                             const EdgeInsets.symmetric(horizontal: 10),

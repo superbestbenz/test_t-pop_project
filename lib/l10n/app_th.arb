@@ -1,5 +1,12 @@
 {
-  "appTitle": "แอปของฉัน",
-  "hello": "สวัสดี",
-  "welcomeUser": "ยินดีต้อนรับ, {name}"
+  "shoppingPackage": "แพ็กเกจช้อปปิ้ง",
+  "buy": "ซื้อ",
+  "paymentMethod": "วิธีการชำระเงิน",
+  "creditCard": "บัตรเครดิต",
+  "bankTransfer": "โอนผ่านธนาคาร",
+  "mobileWallet": "กระเป๋าเงินมือถือ",
+  "methodDetails": "รายละเอียด",
+  "custom": "กำหนดเอง",
+  "payNow": "ชำระเงินตอนนี้(#1)",
+  "thb": "บาท"
 }

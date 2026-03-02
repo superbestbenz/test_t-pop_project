@@ -3,6 +3,7 @@ import 'package:provider/provider.dart' show ReadContext, Selector;
 import 'package:t_pop_testing/core/function/date_cnverter.dart' show formatDate;
 import 'package:t_pop_testing/core/widget/w_skeleton_loading.dart'
     show WSkeletonLoading, SkeletonState;
+import 'package:t_pop_testing/l10n/app_localizations.dart';
 import 'package:t_pop_testing/model/package_history_detail_model/package_h_detail_model.dart' show PackageHDetailModel;
 import 'package:t_pop_testing/model/purchased_item/purchased_item.dart'
     show PurchasedItem;
@@ -124,7 +125,7 @@ class HistoryBody extends StatelessWidget {
                     SizedBox(height: 32),
                     Row(
                       mainAxisAlignment: .end,
-                      children: [Text('${packageDetail?.packageDetailModel?.price ?? 0} THB')],
+                      children: [Text('${packageDetail?.packageDetailModel?.price ?? 0} ${AppLocalizations.of(context)!.thb}')],
                     ),
                     SizedBox(height: 16),
                     Row(

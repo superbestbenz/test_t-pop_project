@@ -9,13 +9,32 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get appTitle => 'My Application';
+  String get shoppingPackage => 'Shopping Package';
 
   @override
-  String get hello => 'Hello';
+  String get buy => 'Buy';
 
   @override
-  String welcomeUser(Object name) {
-    return 'Welcome, $name';
-  }
+  String get paymentMethod => 'Payment Method';
+
+  @override
+  String get creditCard => 'Credit Card';
+
+  @override
+  String get bankTransfer => 'Bank Transfer';
+
+  @override
+  String get mobileWallet => 'Mobile Wallet';
+
+  @override
+  String get methodDetails => 'Method Details';
+
+  @override
+  String get custom => 'Custom';
+
+  @override
+  String get payNow => 'Pay Now(#1)';
+
+  @override
+  String get thb => 'THB';
 }

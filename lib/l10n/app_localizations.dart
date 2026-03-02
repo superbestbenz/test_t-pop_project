@@ -95,23 +95,65 @@ abstract class AppLocalizations {
     Locale('th')
   ];
 
-  /// No description provided for @appTitle.
+  /// No description provided for @shoppingPackage.
   ///
   /// In en, this message translates to:
-  /// **'My Application'**
-  String get appTitle;
+  /// **'Shopping Package'**
+  String get shoppingPackage;
 
-  /// No description provided for @hello.
+  /// No description provided for @buy.
   ///
   /// In en, this message translates to:
-  /// **'Hello'**
-  String get hello;
+  /// **'Buy'**
+  String get buy;
 
-  /// No description provided for @welcomeUser.
+  /// No description provided for @paymentMethod.
   ///
   /// In en, this message translates to:
-  /// **'Welcome, {name}'**
-  String welcomeUser(Object name);
+  /// **'Payment Method'**
+  String get paymentMethod;
+
+  /// No description provided for @creditCard.
+  ///
+  /// In en, this message translates to:
+  /// **'Credit Card'**
+  String get creditCard;
+
+  /// No description provided for @bankTransfer.
+  ///
+  /// In en, this message translates to:
+  /// **'Bank Transfer'**
+  String get bankTransfer;
+
+  /// No description provided for @mobileWallet.
+  ///
+  /// In en, this message translates to:
+  /// **'Mobile Wallet'**
+  String get mobileWallet;
+
+  /// No description provided for @methodDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Method Details'**
+  String get methodDetails;
+
+  /// No description provided for @custom.
+  ///
+  /// In en, this message translates to:
+  /// **'Custom'**
+  String get custom;
+
+  /// No description provided for @payNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Pay Now(#1)'**
+  String get payNow;
+
+  /// No description provided for @thb.
+  ///
+  /// In en, this message translates to:
+  /// **'THB'**
+  String get thb;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

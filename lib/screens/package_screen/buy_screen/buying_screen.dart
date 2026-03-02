@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:t_pop_testing/core/enum/payment_enum.dart' show PaymentMethod;
+import 'package:t_pop_testing/l10n/app_localizations.dart' show AppLocalizations;
 import 'package:t_pop_testing/model/package_detail_model/package_detail_model.dart'
     show PackageDetailModel;
 import 'package:t_pop_testing/screens/package_screen/buy_screen/buying_screen_provider.dart'
@@ -57,7 +58,7 @@ class _BuyingScreenState extends State<BuyingScreen> {
               },
               icon: const Icon(Icons.shopping_cart),
               label: Text(
-                'Pay Now (${packageDetail?.price ?? 'Price not available'} THB)',
+                'Pay Now (${packageDetail?.price ?? 'Price not available'} ${AppLocalizations.of(context)!.thb})',
               ),
             ),
           ),

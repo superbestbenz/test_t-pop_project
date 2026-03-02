@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:t_pop_testing/core/function/date_cnverter.dart' show formatDate;
+import 'package:t_pop_testing/l10n/app_localizations.dart' show AppLocalizations;
 import 'package:t_pop_testing/model/package_history_detail_model/package_h_detail_model.dart'
     show PackageHDetailModel;
 
@@ -55,7 +56,7 @@ class _PackageHistoryDetailScreenState
               const SizedBox(height: 16),
               Center(
                 child: Text(
-                  '${packageDetail?.packageDetailModel?.name ?? 'Package Name'} (${packageDetail?.packageDetailModel?.price ?? '0'} THB)',
+                  '${packageDetail?.packageDetailModel?.name ?? 'Package Name'} (${packageDetail?.packageDetailModel?.price ?? '0'} ${AppLocalizations.of(context)!.thb})',
                   style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,

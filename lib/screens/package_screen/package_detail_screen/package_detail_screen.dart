@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:t_pop_testing/l10n/app_localizations.dart' show AppLocalizations;
 import 'package:t_pop_testing/model/package_detail_model/package_detail_model.dart'
     show PackageDetailModel;
 import 'package:t_pop_testing/screens/package_screen/package_screen_provider.dart'
@@ -54,7 +55,7 @@ class _PackageDetailScreenState extends State<PackageDetailScreen> {
           },
           icon: const Icon(Icons.shopping_cart),
           label: Text(
-            'Buy Now (${packageDetail?.price ?? 'Price not available'} THB)',
+            'Buy Now (${AppLocalizations.of(context)!.payNow.replaceAll('#1', packageDetail?.price.toString() ?? '0')} ${AppLocalizations.of(context)!.thb})',
           ),
         ),
       ),
