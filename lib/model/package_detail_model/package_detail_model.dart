@@ -9,6 +9,7 @@ class PackageDetailModel {
   final int? price;
   final String? description;
   final String? imageUrl;
+  final Duration? duration;
 
   const PackageDetailModel({
     this.id,
@@ -16,6 +17,7 @@ class PackageDetailModel {
     this.price,
     this.description,
     this.imageUrl,
+    this.duration,
   });
 
   factory PackageDetailModel.fromJson(Map<String, dynamic> json) {
@@ -30,6 +32,7 @@ class PackageDetailModel {
     int? price,
     String? description,
     String? imageUrl,
+    Duration? duration,
   }) {
     return PackageDetailModel(
       id: id ?? this.id,
@@ -37,6 +40,7 @@ class PackageDetailModel {
       price: price ?? this.price,
       description: description ?? this.description,
       imageUrl: imageUrl ?? this.imageUrl,
+      duration: duration ?? this.duration,
     );
   }
 }

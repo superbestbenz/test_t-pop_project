@@ -73,70 +73,87 @@ class CardPackage extends StatelessWidget {
       selector: (p0, p1) => p1.packageDetail,
       builder: (context, listPackage, child) {
         PackageDetailModel? packageDetail = listPackage?[index];
-        return Container(
-          height: 310,
-          decoration: BoxDecoration(
-            color: Colors.grey[300],
-            border: Border.all(color: Colors.grey[400]!),
-            borderRadius: BorderRadius.circular(16),
-          ),
-          child: Column(
-            children: [
-              Image.network(
-                packageDetail?.imageUrl ??
-                    'https://via.placeholder.com/400x200.png?text=No+Image',
-                height: 180,
-                width: double.infinity,
-                fit: BoxFit.cover,
-              ),
-              const SizedBox(height: 8),
-              Text(
-                packageDetail?.name ?? 'Package Name',
-                style: const TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
+        return GestureDetector(
+          onTap: () {
+            Navigator.pushNamed(
+              context,
+              '/package-detail',
+              arguments: packageDetail,
+            );
+          },
+          child: Container(
+            height: 310,
+            decoration: BoxDecoration(
+              color: Colors.grey[300],
+              border: Border.all(color: Colors.grey[400]!),
+              borderRadius: BorderRadius.circular(16),
+            ),
+            child: Column(
+              children: [
+                Image.network(
+                  packageDetail?.imageUrl ??
+                      'https://via.placeholder.com/400x200.png?text=No+Image',
+                  height: 180,
+                  width: double.infinity,
+                  fit: BoxFit.cover,
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 12,
-                  vertical: 8,
+                const SizedBox(height: 8),
+                Text(
+                  packageDetail?.name ?? 'Package Name',
+                  style: const TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-                child: Text(
-                  packageDetail?.description ??
-                      'Package description goes here.',
-                  style: const TextStyle(fontSize: 12, color: Colors.grey),
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 12,
+                    vertical: 8,
+                  ),
+                  child: Text(
+                    packageDetail?.description ??
+                        'Package description goes here.',
+                    style: const TextStyle(fontSize: 12, color: Colors.grey),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
                 ),
-              ),
-              Spacer(),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: Row(
-                  children: [
-                    Text(
-                      packageDetail != null
-                          ? '฿${packageDetail.price}'
-                          : 'Price',
-                      style: const TextStyle(fontSize: 14, color: Colors.blue),
-                    ),
-                    Spacer(),
-                    ElevatedButton.icon(
-                      onPressed: () {},
-                      icon: const Icon(Icons.shopping_cart),
-                      label: const Text('Buy'),
-                      style: ButtonStyle(
-                        padding: WidgetStateProperty.all(
-                          const EdgeInsets.symmetric(horizontal: 10),
+                Spacer(),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: Row(
+                    children: [
+                      Text(
+                        packageDetail != null
+                            ? '฿${packageDetail.price}'
+                            : 'Price',
+                        style: const TextStyle(
+                          fontSize: 14,
+                          color: Colors.blue,
                         ),
                       ),
-                    ),
-                  ],
+                      Spacer(),
+                      ElevatedButton.icon(
+                        onPressed: () {
+                          context.read<PackageScreenProvider>().confirmpackage(
+                            context,
+                            packageDetail,
+                          );
+                        },
+                        icon: const Icon(Icons.shopping_cart),
+                        label: const Text('Buy'),
+                        style: ButtonStyle(
+                          padding: WidgetStateProperty.all(
+                            const EdgeInsets.symmetric(horizontal: 10),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-              SizedBox(height: 8),
-            ],
+                SizedBox(height: 8),
+              ],
+            ),
           ),
         );
       },
